@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modelacion</title>
+        <meta charset="UTF-8">    
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
+
+    </head>
+    <body>
+    <div class="cotainer">
+        <div id="contenido-Grupo" class="col-md-12">
+            <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Modelacion</h2>
+                </div>
+                <div id="tablaContrato" class="panel-body">
+                    <div class="col-xs-12 col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <div class="col-xs-4 col-md-6 col-lg-6">
+                                <label for="x" class="control-label" style="text-align: left;">X: </label>
+                                <div class="input-group col-xs-12 col-md-12">
+                                    <input name="x" class="form-control input-md" id="x">
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-6 col-lg-6">
+                                <label for="y" class="control-label" style="text-align: left;">Y: </label>
+                                <div class="input-group col-xs-12 col-md-12">
+                                    <input name="y" class="form-control input-md" id="y"  >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="from-group">     
+                            <div class="col-xs-12 col-md-12 col-lg-12">
+                                <label for="m" class="control-label"  style="text-align: left;">Modelo</label>
+                                <div class="input-group col-xs-12 col-md-12">
+                                    <select name="x" class="form-control input-md" id="m">
+                                        <option value="">Seleccione el modelo</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <!--option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option-->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="text-center"-->
+                        <button id="bt_add" class="btn btn-success">Agregar</button>
+                        <button id="bt_del" class="btn btn-warning">Eliminar</button>
+                        <button id="bt_delall" class="btn btn-danger">Eliminar todo</button>                        
+                        <button id="bt_generar" class="btn btn-primary">Generar</button>
+                    </div>
+                </div>
+
+                <div id="tablaContrato" class="panel-body">
+                    <div class="col-xs-12 col-md-12 col-lg-12">
+                    
+                        <div class="from-group">    
+                            <div class="col-xs-4 col-md-4 col-lg-4">
+                                <label for="n" class="control-label"  style="text-align: left;">N: </label>
+                                <div class="input-group col-xs-12 col-md-12">
+                                    <input name="n" class="form-control input-md" disabled id="n"  >
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4">
+                                <label for="p" class="control-label"  style="text-align: left;">prm: </label>
+                                <div class="input-group col-xs-12 col-md-12">
+                                    <input name="p" class="form-control input-md" disabled id="p"  >
+                                </div>
+                            </div>
+                             <div class="col-xs-4 col-md-4 col-lg-4">
+                                <label for="y-yp" class="control-label"  style="text-align: left;">(y-yp)^: </label>
+                                <div class="input-group col-xs-12 col-md-12">
+                                    <input name="y-yp" class="form-control input-md" disabled id="y-yp"  >
+                                </div>
+                            </div>
+                        </div> 
+                            <div class="from-group">    
+                                <div class="col-xs-6 col-md-6 col-lg-6">
+                                    <label for="model" class="control-label"  style="text-align: left;">modelo: </label>
+                                    <div class="input-group col-xs-12 col-md-12">
+                                        <input name="model" class="form-control input-md" disabled id="model"  >
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 col-lg-6">
+                                    <label for="mp" class="control-label"  style="text-align: left;">(m-p)2: </label>
+                                    <div class="input-group col-xs-12 col-md-12">
+                                        <input name="mp" class="form-control input-md" disabled id="mp"  >
+                                    </div>
+                                </div>
+                            </div>    
+                            <div class="from-group">     
+                                 <div class="col-xs-6 col-md-6 col-lg-6">
+                                    <label for="pr" class="control-label"  style="text-align: left;">Pearson: </label>
+                                    <div class="input-group col-xs-12 col-md-12">
+                                        <input name="pr" class="form-control input-md" disabled id="pr"  >
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 col-lg-6">
+                                    <label for="cf" class="control-label"  style="text-align: left;">confianza: </label>
+                                    <div class="input-group col-xs-12 col-md-12">
+                                        <input name="cf" class="form-control input-md" disabled id="cf"  >
+                                    </div>
+                                </div>
+                            </div>    
+                        
+                    </div> 
+                </div>
+                                
+            </div>
+            </div>
+            <div class="col-md-4">   
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Lista</h2>
+                    </div>
+                    <div id="tabla-modelo" class="panel-body">
+                        <table id="tabla-p" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>Nº</td>
+                                    <td>Xk</td>
+                                    <td>Yk</td>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla"> 
+                            
+                            </tbody>
+                        </table>
+                        <table id="tabla-s" class="table table-bordered"> 
+                            <tr>
+                                <td>Suma</td>
+                                <td id="sx"></td>
+                                <td id="sy"></td>
+                            </tr>
+                        </table>
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-12" style="display: none;">   
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">x^</h2>
+                    </div>
+                    <div id="tabla-modelo" class="panel-body">
+                        <table id="tabla1" class="table table-bordered"> 
+                            <tr>
+                                <td id="sx2"></td>
+                                <td id="sx3"></td>
+                                <td id="sx4"></td>
+                                <td id="sx5"></td>
+                                <td id="sx6"></td>
+                                <td id="sx7"></td>                                
+                                <td id="sx8"></td>
+                            <!--/tr>
+                            <tr-->    
+                                <td id="sx9"></td>
+                                <td id="sx10"></td> 
+                                <td id="sx11"></td>
+                                <td id="sx12"></td>                              
+                                <td id="sx13"></td>
+                                <td id="sx14"></td>
+                                <td id="sx15"></td>
+                            <!--/tr>
+                            <tr-->    
+                                <td id="sx16"></td>
+                                <td id="sx17"></td>
+                                <td id="sx18"></td>
+                                <td id="sx19"></td>
+                                <td id="sx20"></td>
+                                <td id="sx21"></td>
+                                <td id="sx22"></td>
+                            </tr>
+                        </table>
+                    </div>    
+                </div>
+            </div>
+             <div class="col-md-12" style="display: none;">   
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">x^y</h2>
+                    </div>
+                    <div id="tabla-modelo" class="panel-body">
+                        <table id="tabla3" class="table table-bordered"> 
+                            <tr>
+                                <td id="sxy"></td>
+                                <td id="sx2y"></td>
+                                <td id="sx3y"></td>
+                                <td id="sx4y"></td>
+                                <td id="sx5y"></td>
+                                <td id="sx6y"></td>
+                            <!--/tr>
+                            <tr-->    
+                                <td id="sx7y"></td>
+                                <td id="sx8y"></td>
+                                <td id="sx9y"></td> 
+                                <td id="sx10y"></td>
+                                <td id="sx11y"></td>                              
+                            </tr>
+                        </table>
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-12" style="display: none;">   
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Numerador</h2>
+                    </div>
+                    <div id="tabla-modelo" class="panel-body">
+                        <table id="tabla4" class="table table-bordered"> 
+                            <tr>
+                                <td id="n1"></td>
+                                <td id="n2"></td>
+                                <td id="n3"></td>
+                                <td id="n4"></td>
+                                <td id="n5"></td>
+                                <td id="n6"></td>
+                                <td id="n7"></td>
+                                <td id="n8"></td>
+                                <td id="n9"></td> 
+                                <td id="n10"></td>
+                                <td id="n11"></td>                                
+                                <td id="n12"></td>                                
+                            </tr>
+                        </table>
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-12" style="display: none;"> 
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Denominador</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="from-group">
+                            <div class="col-md-6">
+                                <label for="nume" style="text-align: left;">
+                                <div class="col-md-12">
+                                    <input type="text" class="input-control" id="denominador" >
+                                </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="display: none;">   
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">tabla</h2>
+                    </div>
+                    <div id="tabla-modelo" class="panel-body">
+                        <table id="tabla5" class="table table-bordered"> 
+                            <tr>
+                                <td id="i0j0"></td>
+                                <td id="i0j1"></td>
+                                <td id="i0j2"></td>
+                                <td id="i0j3"></td>
+                                <td id="i0j4"></td>
+                                <td id="i0j5"></td>
+                                <td id="i0j6"></td>
+                                <td id="i0j7"></td>
+                            </tr>
+                            <tr>    
+                                <td id="i1j0"></td>
+                                <td id="i1j1"></td>
+                                <td id="i1j2"></td>
+                                <td id="i1j3"></td>
+                                <td id="i1j4"></td>
+                                <td id="i1j5"></td>
+                                <td id="i1j6"></td>
+                                <td id="i1j7"></td>
+                            </tr>
+                            <tr>    
+                                <td id="i2j0"></td>
+                                <td id="i2j1"></td> 
+                                <td id="i2j2"></td>
+                                <td id="i2j3"></td>
+                                <td id="i2j4"></td>
+                                <td id="i2j5"></td> 
+                                <td id="i2j6"></td>
+                                <td id="i2j7"></td>
+                            </tr>
+                            <tr>
+                                <td id="i3j0"></td>
+                                <td id="i3j1"></td> 
+                                <td id="i3j2"></td>
+                                <td id="i3j3"></td>
+                                <td id="i3j4"></td>
+                                <td id="i3j5"></td> 
+                                <td id="i3j6"></td>
+                                <td id="i3j7"></td>                              
+                            </tr>
+                            <tr>
+                                <td id="i4j0"></td>
+                                <td id="i4j1"></td> 
+                                <td id="i4j2"></td>
+                                <td id="i4j3"></td>
+                                <td id="i4j4"></td>
+                                <td id="i4j5"></td> 
+                                <td id="i4j6"></td>
+                                <td id="i4j7"></td>                              
+                            </tr>
+                            <tr>
+                                <td id="i5j0"></td>
+                                <td id="i5j1"></td> 
+                                <td id="i5j2"></td>
+                                <td id="i5j3"></td>
+                                <td id="i5j4"></td>
+                                <td id="i5j5"></td> 
+                                <td id="i5j6"></td>
+                                <td id="i5j7"></td>                              
+                            </tr>
+                            <tr>
+                                <td id="i6j0"></td>
+                                <td id="i6j1"></td> 
+                                <td id="i6j2"></td>
+                                <td id="i6j3"></td>
+                                <td id="i6j4"></td>
+                                <td id="i6j5"></td> 
+                                <td id="i6j6"></td>
+                                <td id="i6j7"></td>                              
+                            </tr>
+                            <tr>
+                                <td id="i7j0"></td>
+                                <td id="i7j1"></td> 
+                                <td id="i7j2"></td>
+                                <td id="i7j3"></td>
+                                <td id="i7j4"></td>
+                                <td id="i7j5"></td> 
+                                <td id="i7j6"></td>
+                                <td id="i7j7"></td>                              
+                            </tr>
+                        </table>
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-12" style="display: none;">   
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">a</h2>
+                    </div>
+                    <div id="tabla-modelo" class="panel-body">
+                        <table id="tabla6" class="table table-bordered">
+                             <tbody> 
+                                <tr>
+                                    <td id="a0"></td>
+                                    <td id="a1"></td>
+                                    <td id="a2"></td>
+                                    <td id="a3"></td>
+                                <!--/tr-->
+                                <!--tr-->
+                                    <td id="a4"></td>
+                                    <td id="a5"></td>
+                                    <td id="a6"></td>
+                                    <td id="a7"></td>
+                                <!--/tr-->
+                                <!--tr-->    
+                                    <td id="a8"></td> 
+                                    <td id="a9"></td>
+                                    <td id="a10"></td>                                
+                                    <td id="a11"></td>                              
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--jquery-->
+        <script src="libs/jquery/dist/jquery.min.js"></script>
+        <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/agregar-fila.js"></script>
+        <script type="text/javascript" src="js/determinante.js"></script>
+        <script type="text/javascript" src="js/operaciones.js"></script>
+    </body>
+</html>
+

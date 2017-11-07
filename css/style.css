@@ -1,0 +1,19 @@
+	#content{
+		position: absolute;
+		min-height: 50%;
+		width: 80%;
+		top: 20%;
+		left: 5%;
+	}
+
+	.selected{
+		cursor: pointer;
+	}
+	.selected:hover{
+		background-color: #0585C0;
+		color: white;
+	}
+	.seleccionada{
+		background-color: #0585C0;
+		color: white;
+	}

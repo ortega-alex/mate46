@@ -1,0 +1,21 @@
+{
+  "name": "ms-web",
+  "authors": [
+    "ortega-alex <mortegalex27@outlook.es>"
+  ],
+  "description": "modelacion y simulacion polinomial",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
