@@ -2,6 +2,7 @@
 	var id_fila_selected=[];
 	var x = ['78','79','80','81','82','83','84','85','86','87','88'];
 	var y = ['61','62','63','64','65','66','67','68','69','70','71'];
+
 	function agregar(x,y){
 		cont++;
 		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+x+'</td><td>'+y+'</td></tr>';
@@ -93,7 +94,9 @@
 		});
 		//(y-yp)^2
 		$('#y-yp').val(ymp2.toFixed(2));
-		
+		swal({
+  			icon: "success",
+		});
 	}
 
 	function seleccionar(id_fila){
@@ -149,7 +152,9 @@
 			if ((x != '' && x != null) && (y != '' && y != null)) {
 				agregar(x,y);
 			}else{
-				alert("Por favor ingrese datos");
+				swal({
+  					title: "Por favor ingrese dados!",
+				});
 			}			
 		});
 
@@ -158,16 +163,38 @@
 		});
 
 		$('#bt_delall').click(function(){
-			eliminarTodasFilas();
+			var message = $(this).data('confirm');
+	        //pop up
+	        swal({
+	            title: "Esta seguro??",
+	            text: message, 
+	            icon: "warning",
+	            buttons: true,
+	            dangerMode: true,
+	        })
+	        .then((willDelete) => {
+	          if (willDelete) {
+	            swal("Los datos han sido eliminados!", {
+	              icon: "success",
+	            });
+	            eliminarTodasFilas();
+	          } else {
+	            swal("No se a eliminado!");
+	          }
+	        });
 		});
 
 		$('#bt_generar').click(function(event) {
 			if($('#tabla tr').val() == null){
-				alert("igrese datos");
+				swal({
+  					title: "Por favor ingrese dados!",
+				});
 			}else{
-				if($("#m").val() == null || $("#m").val() == '') {
-					alert("por favor selecciones um modelo");
-				}else{
+				if($("#m").val() == null || $("#m").val() == '') {					
+					swal({
+  						title: "Por favor selecciones um modelo!",
+					});
+				}else{					
 					sumatoriaXY();
 				}
 			}			
