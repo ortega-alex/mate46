@@ -1,5 +1,7 @@
 	var cont=0 , x = null, y = null, temx = 0 , temy = 0;
 	var id_fila_selected=[];
+	var x = ['78','79','80','81','82','83','84','85','86','87','88'];
+	var y = ['61','62','63','64','65','66','67','68','69','70','71'];
 	function agregar(x,y){
 		cont++;
 		var fila='<tr class="selected" id="fila'+cont+'" onclick="seleccionar(this.id);"><td>'+cont+'</td><td>'+x+'</td><td>'+y+'</td></tr>';
@@ -132,6 +134,14 @@
 		sumatoriaXY();
 		reordenar();
 	}
+
+	function Generar(){
+		eliminarTodasFilas();
+		for (var i = 0 ; i < x.length; i++) {
+			agregar(x[i],y[i]);			
+		}
+	}
+
 	$(document).ready(function(){
 		$('#bt_add').click(function(){
 			x = $('#x').val();
@@ -139,7 +149,7 @@
 			if ((x != '' && x != null) && (y != '' && y != null)) {
 				agregar(x,y);
 			}else{
-				alert("no hay datos");
+				alert("Por favor ingrese datos");
 			}			
 		});
 
@@ -152,6 +162,18 @@
 		});
 
 		$('#bt_generar').click(function(event) {
-			sumatoriaXY();
+			if($('#tabla tr').val() == null){
+				alert("igrese datos");
+			}else{
+				if($("#m").val() == null || $("#m").val() == '') {
+					alert("por favor selecciones um modelo");
+				}else{
+					sumatoriaXY();
+				}
+			}			
 		});
+
+		$("#muestra").click(function(event) {  
+		  Generar();
+	    });  
 	});

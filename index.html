@@ -1,130 +1,155 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Modelacion</title>
-        <meta charset="UTF-8">    
+            
+        <!--css-->
+         <link rel="stylesheet" href="css/style.css">    
         <!--Bootstrap-->
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
+
+            <!-- Font Awesome -->
+        <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="libs/nprogress/nprogress.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="libs/iCheck/skins/flat/green.css" rel="stylesheet">
+
+        <!-- bootstrap-progressbar -->
+        <link href="libs/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+        <!-- JQVMap -->
+        <link href="libs/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+        <!-- bootstrap-daterangepicker -->
+        <link href="libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+        <!-- Custom Theme Style -->
+        <link href="libs/dashboard/css/custom.min.css" rel="stylesheet">
+        <link href="libs/sweetalert/dist/sweetalert.css" rel="stylesheet">
 
     </head>
     <body>
-    <div class="cotainer">
+        <br>
+    <div class="cotainer">        
         <div id="contenido-Grupo" class="col-md-12">
             <div class="col-md-8">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Modelacion</h2>
-                </div>
-                <div id="tablaContrato" class="panel-body">
-                    <div class="col-xs-12 col-md-12 col-lg-12">
-                        <div class="form-group">
-                            <div class="col-xs-4 col-md-6 col-lg-6">
-                                <label for="x" class="control-label" style="text-align: left;">X: </label>
-                                <div class="input-group col-xs-12 col-md-12">
-                                    <input name="x" class="form-control input-md" id="x">
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-6 col-lg-6">
-                                <label for="y" class="control-label" style="text-align: left;">Y: </label>
-                                <div class="input-group col-xs-12 col-md-12">
-                                    <input name="y" class="form-control input-md" id="y"  >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="from-group">     
-                            <div class="col-xs-12 col-md-12 col-lg-12">
-                                <label for="m" class="control-label"  style="text-align: left;">Modelo</label>
-                                <div class="input-group col-xs-12 col-md-12">
-                                    <select name="x" class="form-control input-md" id="m">
-                                        <option value="">Seleccione el modelo</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <!--option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option-->
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Modelacion</h2>
                     </div>
-                </div>
-                <div class="panel-footer">
-                    <div class="text-center"-->
-                        <button id="bt_add" class="btn btn-success">Agregar</button>
-                        <button id="bt_del" class="btn btn-warning">Eliminar</button>
-                        <button id="bt_delall" class="btn btn-danger">Eliminar todo</button>                        
-                        <button id="bt_generar" class="btn btn-primary">Generar</button>
-                    </div>
-                </div>
-
-                <div id="tablaContrato" class="panel-body">
-                    <div class="col-xs-12 col-md-12 col-lg-12">
-                    
-                        <div class="from-group">    
-                            <div class="col-xs-4 col-md-4 col-lg-4">
-                                <label for="n" class="control-label"  style="text-align: left;">N: </label>
-                                <div class="input-group col-xs-12 col-md-12">
-                                    <input name="n" class="form-control input-md" disabled id="n"  >
-                                </div>
-                            </div>
-                            <div class="col-xs-4 col-md-4 col-lg-4">
-                                <label for="p" class="control-label"  style="text-align: left;">prm: </label>
-                                <div class="input-group col-xs-12 col-md-12">
-                                    <input name="p" class="form-control input-md" disabled id="p"  >
-                                </div>
-                            </div>
-                             <div class="col-xs-4 col-md-4 col-lg-4">
-                                <label for="y-yp" class="control-label"  style="text-align: left;">(y-yp)^: </label>
-                                <div class="input-group col-xs-12 col-md-12">
-                                    <input name="y-yp" class="form-control input-md" disabled id="y-yp"  >
-                                </div>
-                            </div>
-                        </div> 
-                            <div class="from-group">    
-                                <div class="col-xs-6 col-md-6 col-lg-6">
-                                    <label for="model" class="control-label"  style="text-align: left;">modelo: </label>
+                    <div id="tablaContrato" class="panel-body">
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <div class="col-xs-4 col-md-6 col-lg-6">
+                                    <label for="x" class="control-label" style="text-align: left;">X: </label>
                                     <div class="input-group col-xs-12 col-md-12">
-                                        <input name="model" class="form-control input-md" disabled id="model"  >
+                                        <input name="x" class="form-control input-md" id="x">
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-md-6 col-lg-6">
-                                    <label for="mp" class="control-label"  style="text-align: left;">(m-p)2: </label>
+                                <div class="col-xs-4 col-md-6 col-lg-6">
+                                    <label for="y" class="control-label" style="text-align: left;">Y: </label>
                                     <div class="input-group col-xs-12 col-md-12">
-                                        <input name="mp" class="form-control input-md" disabled id="mp"  >
+                                        <input name="y" class="form-control input-md" id="y"  >
                                     </div>
                                 </div>
-                            </div>    
+                            </div>
                             <div class="from-group">     
-                                 <div class="col-xs-6 col-md-6 col-lg-6">
-                                    <label for="pr" class="control-label"  style="text-align: left;">Pearson: </label>
+                                <div class="col-xs-12 col-md-12 col-lg-12">
+                                    <label for="m" class="control-label"  style="text-align: left;">Modelo</label>
                                     <div class="input-group col-xs-12 col-md-12">
-                                        <input name="pr" class="form-control input-md" disabled id="pr"  >
+                                        <select name="x" class="form-control input-md" id="m">
+                                            <option value="">Seleccione el modelo</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <!--option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option-->
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-md-6 col-lg-6">
-                                    <label for="cf" class="control-label"  style="text-align: left;">confianza: </label>
-                                    <div class="input-group col-xs-12 col-md-12">
-                                        <input name="cf" class="form-control input-md" disabled id="cf"  >
-                                    </div>
-                                </div>
-                            </div>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="text-center"-->
+                            <button id="bt_add" class="btn btn-success">Agregar</button>
+                            <button id="bt_del" class="btn btn-warning">Eliminar</button>
+                            <button id="bt_delall" class="btn btn-danger">Eliminar todo</button>                        
+                            <button id="bt_generar" class="btn btn-primary">Generar</button>
+                            <button id="muestra" class="btn btn-info">Datos de Prueba</button>
+                        </div>
+                    </div>
+
+                    <div id="tablaContrato" class="panel-body">
+                        <div class="col-xs-12 col-md-12 col-lg-12">
                         
-                    </div> 
+                            <div class="from-group">    
+                                <div class="col-xs-4 col-md-4 col-lg-4">
+                                    <label for="n" class="control-label"  style="text-align: left;">N: </label>
+                                    <div class="input-group col-xs-12 col-md-12">
+                                        <input name="n" class="form-control input-md" disabled id="n"  >
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-md-4 col-lg-4">
+                                    <label for="p" class="control-label"  style="text-align: left;">prm: </label>
+                                    <div class="input-group col-xs-12 col-md-12">
+                                        <input name="p" class="form-control input-md" disabled id="p"  >
+                                    </div>
+                                </div>
+                                 <div class="col-xs-4 col-md-4 col-lg-4">
+                                    <label for="y-yp" class="control-label"  style="text-align: left;">(y-yp)^: </label>
+                                    <div class="input-group col-xs-12 col-md-12">
+                                        <input name="y-yp" class="form-control input-md" disabled id="y-yp"  >
+                                    </div>
+                                </div>
+                            </div> 
+                                <div class="from-group">    
+                                    <div class="col-xs-6 col-md-6 col-lg-6">
+                                        <label for="model" class="control-label"  style="text-align: left;">modelo: </label>
+                                        <div class="input-group col-xs-12 col-md-12">
+                                            <input name="model" class="form-control input-md" disabled id="model"  >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-lg-6">
+                                        <label for="mp" class="control-label"  style="text-align: left;">(m-p)2: </label>
+                                        <div class="input-group col-xs-12 col-md-12">
+                                            <input name="mp" class="form-control input-md" disabled id="mp"  >
+                                        </div>
+                                    </div>
+                                </div>    
+                                <div class="from-group">     
+                                     <div class="col-xs-6 col-md-6 col-lg-6">
+                                        <label for="pr" class="control-label"  style="text-align: left;">Pearson: </label>
+                                        <div class="input-group col-xs-12 col-md-12">
+                                            <input name="pr" class="form-control input-md" disabled id="pr"  >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 col-lg-6">
+                                        <label for="cf" class="control-label"  style="text-align: left;">NC: </label>
+                                        <div class="input-group col-xs-12 col-md-12">
+                                            <input name="cf" class="form-control input-md" disabled id="cf"  >
+                                        </div>
+                                    </div>
+                                </div>    
+                            
+                        </div> 
+                    </div>
+                                    
                 </div>
-                                
-            </div>
             </div>
             <div class="col-md-4">   
-                <div class="panel panel-warning">
+                <div class="panel panel-danger">
                     <div class="panel-heading">
                         <h2 class="panel-title">Lista</h2>
                     </div>
@@ -274,6 +299,10 @@
                                 <td id="i0j5"></td>
                                 <td id="i0j6"></td>
                                 <td id="i0j7"></td>
+                                <td id="i0j8"></td>
+                                <td id="i0j9"></td>
+                                <td id="i0j10"></td>
+                                <td id="i0j11"></td>
                             </tr>
                             <tr>    
                                 <td id="i1j0"></td>
@@ -284,6 +313,10 @@
                                 <td id="i1j5"></td>
                                 <td id="i1j6"></td>
                                 <td id="i1j7"></td>
+                                <td id="i1j8"></td>
+                                <td id="i1j9"></td>
+                                <td id="i1j10"></td>
+                                <td id="i1j11"></td>
                             </tr>
                             <tr>    
                                 <td id="i2j0"></td>
@@ -294,6 +327,10 @@
                                 <td id="i2j5"></td> 
                                 <td id="i2j6"></td>
                                 <td id="i2j7"></td>
+                                <td id="i2j8"></td>
+                                <td id="i2j9"></td> 
+                                <td id="i2j10"></td>
+                                <td id="i2j11"></td>
                             </tr>
                             <tr>
                                 <td id="i3j0"></td>
@@ -303,7 +340,11 @@
                                 <td id="i3j4"></td>
                                 <td id="i3j5"></td> 
                                 <td id="i3j6"></td>
-                                <td id="i3j7"></td>                              
+                                <td id="i3j7"></td>  
+                                <td id="i3j8"></td>
+                                <td id="i3j9"></td> 
+                                <td id="i3j10"></td>
+                                <td id="i3j11"></td>                              
                             </tr>
                             <tr>
                                 <td id="i4j0"></td>
@@ -313,7 +354,11 @@
                                 <td id="i4j4"></td>
                                 <td id="i4j5"></td> 
                                 <td id="i4j6"></td>
-                                <td id="i4j7"></td>                              
+                                <td id="i4j7"></td>  
+                                <td id="i4j8"></td>
+                                <td id="i4j9"></td> 
+                                <td id="i4j10"></td>
+                                <td id="i4j11"></td>                              
                             </tr>
                             <tr>
                                 <td id="i5j0"></td>
@@ -323,7 +368,11 @@
                                 <td id="i5j4"></td>
                                 <td id="i5j5"></td> 
                                 <td id="i5j6"></td>
-                                <td id="i5j7"></td>                              
+                                <td id="i5j7"></td>        
+                                <td id="i5j8"></td>
+                                <td id="i5j9"></td> 
+                                <td id="i5j10"></td>
+                                <td id="i5j11"></td>                        
                             </tr>
                             <tr>
                                 <td id="i6j0"></td>
@@ -333,7 +382,11 @@
                                 <td id="i6j4"></td>
                                 <td id="i6j5"></td> 
                                 <td id="i6j6"></td>
-                                <td id="i6j7"></td>                              
+                                <td id="i6j7"></td> 
+                                <td id="i6j8"></td>
+                                <td id="i6j9"></td> 
+                                <td id="i6j10"></td>
+                                <td id="i6j11"></td>                               
                             </tr>
                             <tr>
                                 <td id="i7j0"></td>
@@ -343,7 +396,67 @@
                                 <td id="i7j4"></td>
                                 <td id="i7j5"></td> 
                                 <td id="i7j6"></td>
-                                <td id="i7j7"></td>                              
+                                <td id="i7j7"></td>      
+                                <td id="i7j8"></td>
+                                <td id="i7j9"></td> 
+                                <td id="i7j10"></td>
+                                <td id="i7j11"></td>                        
+                            </tr>
+                             <tr>
+                                <td id="i8j0"></td>
+                                <td id="i8j1"></td> 
+                                <td id="i8j2"></td>
+                                <td id="i8j3"></td>
+                                <td id="i8j4"></td>
+                                <td id="i8j5"></td> 
+                                <td id="i8j6"></td>
+                                <td id="i8j7"></td>      
+                                <td id="i8j8"></td>
+                                <td id="i8j9"></td> 
+                                <td id="i8j10"></td>
+                                <td id="i8j11"></td>                        
+                            </tr>
+                             <tr>
+                                <td id="i9j0"></td>
+                                <td id="i9j1"></td> 
+                                <td id="i9j2"></td>
+                                <td id="i9j3"></td>
+                                <td id="i9j4"></td>
+                                <td id="i9j5"></td> 
+                                <td id="i9j6"></td>
+                                <td id="i9j7"></td>      
+                                <td id="i9j8"></td>
+                                <td id="i9j9"></td> 
+                                <td id="i9j10"></td>
+                                <td id="i9j11"></td>                        
+                            </tr>
+                             <tr>
+                                <td id="i10j0"></td>
+                                <td id="i10j1"></td> 
+                                <td id="i10j2"></td>
+                                <td id="i10j3"></td>
+                                <td id="i10j4"></td>
+                                <td id="i10j5"></td> 
+                                <td id="i10j6"></td>
+                                <td id="i10j7"></td>      
+                                <td id="i10j8"></td>
+                                <td id="i10j9"></td> 
+                                <td id="i10j10"></td>
+                                <td id="i10j11"></td>                        
+                            </tr>
+                             <tr>
+                                <td id="i11j0"></td>
+                                <td id="i11j1"></td> 
+                                <td id="i11j2"></td>
+                                <td id="i11j3"></td>
+                                <td id="i11j4"></td>
+                                <td id="i11j5"></td> 
+                                <td id="i11j6"></td>
+                                <td id="i11j7"></td>      
+                                <td id="i11j8"></td>
+                                <td id="i11j9"></td> 
+                                <td id="i11j10"></td>
+                                <td id="i11j11"></td>                        
                             </tr>
                         </table>
                     </div>    
@@ -382,12 +495,44 @@
             </div>
         </div>
     </div>
-        <!--jquery-->
+        
+        <!-- jQuery -->
         <script src="libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
         <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="libs/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="libs/nprogress/nprogress.js"></script>
+        <!-- Chart.js -->
+        <script src="libs/Chart.js/dist/Chart.min.js"></script>
+        <!-- gauge.js -->
+        <script src="libs/gauge.js/dist/gauge.min.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="libs/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="libs/iCheck/icheck.min.js"></script>
+        <!-- Skycons -->
+        <script src="libs/skycons/skycons.js"></script>
+
+            <!-- DateJS -->
+        <script src="libs/DateJS/build/date.js"></script>
+        <!-- JQVMap -->
+        <script src="libs/jqvmap/dist/jquery.vmap.js"></script>
+        <script src="libs/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="libs/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="libs/moment/min/moment.min.js"></script>
+        <script src="libs/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <!--script src="libs/dashboard/js/custom.min.js"></script-->
+
+        <!--js-->
         <script type="text/javascript" src="js/agregar-fila.js"></script>
         <script type="text/javascript" src="js/determinante.js"></script>
         <script type="text/javascript" src="js/operaciones.js"></script>
+        <!--script type="text/javascript" src="js/datosPruba.js"></script-->
     </body>
 </html>
 

@@ -74,7 +74,7 @@
                 for(var k=0; k<=matriz2.length-1;k++){
                     matriz2[k][i] = $("#i"+k+"j"+i).text();
                 }
-               // console.log(matriz2);
+                //console.log(matriz2);
             }
         }
 
@@ -135,9 +135,22 @@
             }
 
             $(document).ready(function(){
-                $("#bt_add").click(function(event) {
-                    exponentesx();                    
-                });                
+                 $("#bt_generar").click(function(event) {
+                    var listo = false;
+                    if($('#tabla tr').val() == null){
+                        listo = false;
+                    }else{
+                        if($("#m").val() == null || $("#m").val() == ''){
+                            listo = false;
+                        }else{
+                            listo = true;
+                        }
+                    }
+                    if(listo){
+                        exponentesx(); 
+                    }                     
+                });       
+                        
             });
             
             /* ---------------------------------- */            
