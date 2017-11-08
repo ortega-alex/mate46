@@ -1,7 +1,13 @@
 	var cont=0 , x = null, y = null, temx = 0 , temy = 0;
 	var id_fila_selected=[];
-	var x = ['78','79','80','81','82','83','84','85','86','87','88'];
-	var y = ['61','62','63','64','65','66','67','68','69','70','71'];
+	var xd = ['78','79','80','81','82','83','84','85','86','87','88'];
+	var yd = ['61','62','63','64','65','66','67','68','69','70','71'];
+
+	/*	
+	*sumatorias
+	*/
+	var xk = new Array();
+	var yk = new Array();
 
 	function agregar(x,y){
 		cont++;
@@ -10,11 +16,56 @@
 		reordenar();
 		
 		$('#x').val('');$('#y').val('');
-		x = null; y = null;
-		
+		x = null; y = null;		
 	}
 
-	function sumatoriaXY(){		
+	function sumatorias(){	
+		xk.length = 0;		
+		yk.length = 0;		
+		var modelo = (parseInt($("#m").val()) * 2)+2;
+		var modeloy = parseInt($("#m").val()) +2;	
+		var sumax = 0 , sumay = 0;		
+		$('#tabla tr').each(function(){	
+			var temx = $(this).find('td').eq(1).text();	
+			var temy = $(this).find('td').eq(2).text();	
+			sumax += parseFloat(temx);
+			sumay += parseFloat(temy);		
+			if(xk.length == 0 && yk.length == 0){;	
+				for (var i = 2 ; i < modelo; i++) {
+					xk.push(Math.pow(temx,i));
+				}
+				for (var j = 2 ; j < modeloy; j++) {
+					yk.push(Math.pow(temy,j));
+				}
+			}else{
+				var exponente = 2;
+				var exponentey = 2;
+				xk.forEach(function(id,index) {
+					//console.log('valor anterior X: '+id+'  mas celda: '+temx+' exponmente: '+exponente+' mas nuevo calculo: '+Math.pow(temx,exponente));
+				    xk.splice(index,1,id+Math.pow(temx,exponente));
+				    exponente++;
+				});
+			
+				yk.forEach(function(id,index) {
+					//console.log('valor anterior Y: '+id+'  mas celda: '+temy+' exponmente: '+exponentey+' mas nuevo calculo: '+Math.pow(temy,exponentey));
+				    yk.splice(index,1,id+Math.pow(temy,exponentey));
+				    exponentey++;
+				});
+			}
+				
+		});
+
+		$('#sx').text(sumax.toFixed(2));$('#sy').text(sumay.toFixed(2));
+		var total = (parseFloat($('#sy').text()) / parseFloat($('#n').val()));
+		$('#p').val(total.toFixed(2));		
+		$("#xk").val('');
+		$("#yk").val('');	
+		$("#xk").val(xk);
+		$("#yk").val(yk);	
+		promediado();		
+	}
+
+/*	function sumatoriaXY(){		
 		
 		var sumax = 0,sumay = 0 , sx2 = 0,sx3 = 0,sx4 = 0,sx5 = 0,
 		sx6 = 0,sx7 = 0,sx8 = 0,sx9 = 0,sx10 = 0,sx11 = 0,sx12 = 0,sx13 = 0;
@@ -82,7 +133,7 @@
 		var total = s/n;
 		$('#p').val(total.toFixed(2));		
 		promediado();		
-	}
+	}*/
 
 	function promediado(){
 		var temy = 0,sumay = 0, ymp2 = 0;
@@ -92,11 +143,8 @@
 			var p = $('#p').val();
 			ymp2 += Math.pow(temy-p, 2);			
 		});
-		//(y-yp)^2
-		$('#y-yp').val(ymp2.toFixed(2));
-		swal({
-  			icon: "success",
-		});
+		$("#y-yp").val(ymp2);
+		//(y-yp)^2		
 	}
 
 	function seleccionar(id_fila){
@@ -116,7 +164,8 @@
 		for(var i=0; i<id_fila.length; i++){
 			$('#'+id_fila[i]).remove();
 		}		
-		sumatoriaXY();
+		//sumatoriaXY();
+		sumatorias();
 		reordenar();
 	}
 
@@ -126,22 +175,22 @@
 			$(this).find('td').eq(0).text(num);
 			num++;
 		});
-
 		$('#n').val(num-1);
-
 	}
+
 	function eliminarTodasFilas(){
 		$('#tabla tr').each(function(){
 			$(this).remove();
 		});
-		sumatoriaXY();
+		//sumatoriaXY();
+		sumatorias();
 		reordenar();
 	}
 
 	function Generar(){
 		eliminarTodasFilas();
-		for (var i = 0 ; i < x.length; i++) {
-			agregar(x[i],y[i]);			
+		for (var i = 0 ; i < xd.length; i++) {
+			agregar(xd[i],yd[i]);			
 		}
 	}
 
@@ -195,12 +244,16 @@
   						title: "Por favor selecciones um modelo!",
 					});
 				}else{					
-					sumatoriaXY();
+					//sumatoriaXY();
+					sumatorias();
+					swal({
+			  			icon: "success",
+					});
 				}
 			}			
 		});
 
 		$("#muestra").click(function(event) {  
-		  Generar();
+			Generar();
 	    });  
 	});

@@ -7,7 +7,32 @@
         /*
         *armar determinante 
         */
-        function exponentesx(){
+       
+       function  exponente(){
+            array.length = 0;
+            array2.length = 0;
+            var n = $("#n").val() , x = 0 , y = 0;
+            $('#tabla-s tr').each(function(){ 
+                x = $(this).find('td').eq(1).text();                             
+            });
+            $('#tabla-s tr').each(function(){               
+               y = $(this).find('td').eq(2).text();                             
+            });
+            array.push(n);
+            array.push(x); array2.push(y);
+            var cadena = $("#xk").val().split(",");
+            var cadenay = $("#yk").val().split(",");
+            for (var i  = 0;i < cadena.length ; i++) {
+                array.push(cadena[i]);
+            }
+             for (var j  = 0;j < cadenay.length ; j++) {
+                array2.push(cadenay[j]);
+            }
+            var m = $("#m").val();  
+            armarDenominador(m);
+       }
+
+        /*function exponentesx(){
             array.length = 0;
             array2.length = 0;
             var tem = 0,tem2 = 0, n = $("#n").val(),x = 0,y = 0; 
@@ -34,7 +59,7 @@
             });
             var m = $("#m").val();  
             armarDenominador(m);
-        }
+        }*/
 
         function armarDenominador(n){
             //var na = 0;
@@ -147,7 +172,8 @@
                         }
                     }
                     if(listo){
-                        exponentesx(); 
+                        //exponentesx(); 
+                        exponente();
                     }                     
                 });       
                         
